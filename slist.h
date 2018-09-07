@@ -55,6 +55,7 @@ public:
       return false;
     } else {
       head = node;
+      return true;
     }
   }
 
