@@ -1,6 +1,6 @@
 #include <iostream>
 
-// #include "dlist.h"
+#include "dlist.h"
 #include "slist.h"
 
 using namespace std;
@@ -32,7 +32,7 @@ struct Float {
 
 int main(int argc, char const *argv[]) {
   testSimpleLinkedList();
-  // testDoubleLinkedList();
+  testDoubleLinkedList();
 
   cin.get();
   return EXIT_SUCCESS;
@@ -65,24 +65,28 @@ void testSimpleLinkedList() {
   }
   cout << endl << endl;
 }
-/*
 void testDoubleLinkedList() {
   cout << "Double Linked List" << endl;
 
   DList<Integer> integers;
   DList<Integer>::iterator ite;
 
+  DList<Integer>::iterator ite1;
   for (int i = 0; i < 5; i++) {
     integers.push_front(2 * i + 1);
   }
 
+  for (ite1 = integers.begin(); ite1 != integers.end(); ++ite1) {
+    cout << *ite1 << " ";
+  }
+  cout << endl;
   ite = integers.begin();
   ++ite;
   cout << *ite << " ";
   ++ite;
   cout << *ite << " ";
+
   --ite;
   cout << *ite << " ";
   cout << endl << endl;
 }
-*/

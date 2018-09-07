@@ -30,16 +30,13 @@ public:
   SList() { head = nullptr; };
 
   bool find(T search, Node<T> **&pointer) {
-
     pointer = &head;
-
-    // Tratté de poner "while(*pointer && !cmp(...) ) pero siempre evalueaba el
+    // Traté de poner "while(*pointer && !cmp(...) ) pero siempre evalueaba el
     // segundo argumento, lo cual no tiene sentido"
     while (*pointer) {
       if (!cmp(search, (*pointer)->data)) {
         break;
       }
-
       pointer = &((*pointer)->next);
     }
     return ((*pointer)->data == search);
