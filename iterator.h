@@ -20,7 +20,7 @@ public:
   }
   T operator*() {
     if (current) {
-      return (this->current->data);
+      return (this->current->data); // Esto no deberías validaro, sino dará warning. En todo caso si validas, dar un throw
     }
   }
 };

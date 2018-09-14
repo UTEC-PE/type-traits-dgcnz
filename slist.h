@@ -34,7 +34,7 @@ public:
     // Traté de poner "while(*pointer && !cmp(...) ) pero siempre evalueaba el
     // segundo argumento, lo cual no tiene sentido"
     while (*pointer) {
-      if (!cmp(search, (*pointer)->data)) {
+      if (!cmp(search, (*pointer)->data)) { 
         break;
       }
       pointer = &((*pointer)->next);

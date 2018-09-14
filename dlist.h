@@ -8,13 +8,13 @@ public:
   DListIterator() : Iterator<T>(){};
   DListIterator(Node<T> *current) : Iterator<T>(current){};
   DListIterator<T> operator++() {
-    if (this->current) {
+    if (this->current) { // Esto no deberías validaro, sino dará warning. En todo caso si validas, dar un throw
       this->current = this->current->next;
       return *this;
     }
   }
   DListIterator<T> operator--() {
-    if (this->current) {
+    if (this->current) { // Esto no deberías validaro, sino dará warning. En todo caso si validas, dar un throw
       this->current = this->current->prev;
       return *this;
     }
@@ -68,9 +68,9 @@ public:
       return;
     } else if (this->head && this->head->next) {
       this->head = this->head->next;
-      delete (this->head->prev);
+      delete (this->head->prev); // Falta igualar head->prev a nullptr
     } else {
-      delete (this->head);
+      delete (this->head); //Falta igual head a nullptr
     }
   }
 
@@ -79,9 +79,10 @@ public:
       return;
     } else if (this->head && this->head->next) {
       this->tail = this->tail->prev;
-      delete (this->tail->next);
+      delete (this->tail->next); // Falta igualar tail->next a nullptr
     } else {
       delete (this->head);
+      // Falta igual head a nullptr
     }
   }
 
